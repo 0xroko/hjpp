@@ -14,7 +14,8 @@ export const getDefinition = async (id: string) => {
 
   try {
     const res = JSON.parse(await t.text()) as Definicija;
-    if (res?.rijec === undefined) throw new Error("No definition found");
+    if (res?.rijec === undefined)
+      throw new Error("No definition found for: " + id);
     return res;
   } catch (error) {
     console.log(error);

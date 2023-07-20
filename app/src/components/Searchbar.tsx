@@ -1,14 +1,16 @@
 "use client";
 import { useFocusOnKeypress } from "@/hooks/useFocusOnKeypress";
+import { useSearchParamsState } from "@/hooks/useQueryParamsState";
 import { useEffect, useRef, useState } from "react";
 
 interface SearchProps {
   children?: React.ReactNode | React.ReactNode[];
   onChange: (query: string) => void;
-  value: string;
 }
 
-export const Search = ({ children, onChange, value }: SearchProps) => {
+export const Search = ({ children, onChange }: SearchProps) => {
+  const [search, setSearch] = useSearchParamsState();
+
   const [isFocused, setIsFocused] = useState(false);
 
   const searchBarRef = useRef<HTMLInputElement>(null);
@@ -20,6 +22,11 @@ export const Search = ({ children, onChange, value }: SearchProps) => {
       searchBarRef.current.onblur = () => setIsFocused(false);
     }
   }, [searchBarRef]);
+
+  // global search value should be inside context
+  useEffect(() => {
+    onChange(search);
+  }, [search, onChange]);
 
   return (
     <div
@@ -42,8 +49,8 @@ export const Search = ({ children, onChange, value }: SearchProps) => {
 
       <input
         ref={searchBarRef}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
         placeholder="upiši pojam"
         className={`h-7 w-full bg-transparent font-medium outline-none placeholder:font-normal placeholder:text-accents-6`}
         type="text"

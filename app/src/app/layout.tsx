@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: appName,
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL ?? process.env.VERCEL_URL ?? ""
+  ),
   description: "Unaprijeđena verzija HJP-a",
 
   other: {

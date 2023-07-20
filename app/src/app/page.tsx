@@ -1,16 +1,16 @@
 "use client";
 import { Search } from "@/components/Searchbar";
 import { useDefinitionSearch } from "@/hooks/useDefinitionSearch";
-import { useSearchParamsState } from "@/hooks/useQueryParamsState";
 import { replaceAWithLink } from "@/utils/replaceLink";
 import Link from "next/link";
+import { Suspense, useState } from "react";
 
 interface SearchProps {
   children?: React.ReactNode | React.ReactNode[];
 }
 
 export default function Home() {
-  const [search, setSearch] = useSearchParamsState();
+  const [search, setSearch] = useState("");
 
   const resault = useDefinitionSearch(search);
 
@@ -26,7 +26,9 @@ export default function Home() {
           prȅtraga ž 〈D L -azi〉
         </p>
       </div>
-      <Search onChange={setSearch} value={search} />
+      <Suspense>
+        <Search onChange={setSearch} />
+      </Suspense>
 
       {search?.length > 0 ? (
         <div
