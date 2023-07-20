@@ -53,6 +53,8 @@ export const SurpriseMeButton = () => {
     fetch();
   }, [pathName]);
 
+  if (!randomDefinition) return null;
+
   return (
     <Link
       href={"/r/" + randomDefinition?.results[0]?.id}

@@ -51,11 +51,6 @@ export const DefinitionInfo = ({ children, id }: DefinitionInfoProps) => {
     get();
   }, [inView, id]);
 
-  const html =
-    typeof definition?.definicija === "string"
-      ? definition?.definicija
-      : Object.values(definition?.definicija ?? {}).join("<br>") ?? "";
-
   return (
     <HoverCardRa.Root openDelay={200} closeDelay={150}>
       <HoverCardRa.Trigger asChild>

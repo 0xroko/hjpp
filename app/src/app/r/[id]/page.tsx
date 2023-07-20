@@ -13,7 +13,7 @@ import { replaceAWithLink } from "@/utils/replaceLink";
 import { Metadata } from "next";
 import { RedirectType } from "next/dist/client/components/redirect";
 import { redirect } from "next/navigation";
-import { Definicija } from "../../../../../packages/types";
+import { Definicija } from "types";
 
 // helper function to remove all hmtl tags
 function stripHtml(html: string) {
