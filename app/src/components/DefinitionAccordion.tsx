@@ -29,7 +29,7 @@ export const DefinicijaAccordionTitle = ({
         {...props}
         title={disabled ? "Nema podataka" : "Prikaži"}
         disabled={disabled}
-        className={cn("mt-4 border-b transition-all duration-200", {
+        className={cn("mt-4 border-b transition-[height] duration-200", {
           "border-b-accents-3 text-accents-3": disabled,
           "border-accents-6 text-accents-6 hover:border-background hover:text-accents-9 data-[state=open]:border-accents-9 data-[state=open]:text-accents-9 ":
             !disabled,
