@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accents-0: 250 250 250;
+  --accents-1: 245 245 245;
+  --accents-2: 229 229 229;
+  --accents-3: 212 212 212;
+  --accents-4: 163 163 163;
+  --accents-5: 115 115 115;
+  --accents-6: 82 82 82;
+  --accents-7: 64 64 64;
+  --accents-8: 38 38 38;
+  --accents-9: 23 23 23;
+
+  --foreground: var(--accents-0);
+  --background: var(--accents-9);
+
+  --search-highlight: theme(colors.yellow.100);
+}
+
+[class="dark"] {
+  --accents-0: 23 23 23;
+  /* swap 1 and 2 */
+  --accents-2: 38 38 38;
+  --accents-1: 64 64 64;
+  --accents-3: 82 82 82;
+  --accents-4: 115 115 115;
+  /* swap 5 and 6 */
+  --accents-6: 163 163 163;
+  --accents-5: 212 212 212;
+  --accents-7: 229 229 229;
+  --accents-8: 245 245 245;
+  --accents-9: 250 250 250;
+
+  --foreground: var(--accents-0);
+  --background: var(--accents-9);
+
+  --search-highlight: theme(colors.yellow.800);
+}
+
+body {
+  @apply selection:bg-search-highlight selection:text-accents-9;
+}

@@ -1,0 +1,4 @@
+packages:
+  - scraper
+  - packages/**
+  - app

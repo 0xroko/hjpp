@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "cd app && next dev"
+  },
+  "dependencies": {
+    "typescript": "^5.1.5"
+  }
+}

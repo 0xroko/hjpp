@@ -1,0 +1,51 @@
+{
+  "name": "scraper",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "ts-node-dev definitions.ts --ignore-watch *",
+    "hjpp": "esr cli.ts",
+    "meilisearch": "esr meilisearch.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "types": "const.ts",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chalk": "4",
+    "cheerio": "1.0.0-rc.12",
+    "cli-progress": "^3.12.0",
+    "config": "workspace:*",
+    "dompurify": "^3.0.3",
+    "dotenv": "^16.3.1",
+    "esbuild-runner": "^2.2.2",
+    "fetch": "^1.1.0",
+    "fs-extra": "^11.1.1",
+    "jsdom": "^22.1.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "meilisearch": "^0.33.0",
+    "nice-napi": "^1.0.2",
+    "piscina": "^4.0.0",
+    "types": "workspace:*",
+    "xml2js": "^0.6.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.31",
+    "@types/cli-progress": "^3.11.0",
+    "@types/dompurify": "^3.0.2",
+    "@types/fs-extra": "^11.0.1",
+    "@types/jsdom": "^21.1.1",
+    "@types/lodash.get": "^4.4.7",
+    "@types/lodash.set": "^4.3.7",
+    "@types/node": "^20.3.2",
+    "@types/xml2js": "^0.4.11",
+    "@types/yargs": "^17.0.24",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.5"
+  }
+}
