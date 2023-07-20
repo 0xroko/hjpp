@@ -24,7 +24,7 @@ export const ThemeToggle = ({ children }: ThemeToggleProps) => {
   if (!mounted) {
     return (
       <button
-        className={`group hidden border-b border-b-accents-4 text-sm text-accents-4 transition-colors duration-300 hover:border-accents-9 hover:text-accents-9`}
+        className={`group invisible border-b border-b-accents-4 text-sm text-accents-4 transition-colors duration-300 hover:border-accents-9 hover:text-accents-9`}
       >
         sistem
       </button>
