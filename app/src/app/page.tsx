@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <div className={`pt-44`}>
+      <div className={`pt-16 md:pt-28`}>
         <h1
           className={`text-5xl font-bold leading-normal tracking-tight md:text-[5rem]`}
         >

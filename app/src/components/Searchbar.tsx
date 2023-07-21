@@ -30,7 +30,7 @@ export const Search = ({ children, onChange }: SearchProps) => {
 
   return (
     <div
-      className={`div mt-32 flex items-center border-b border-accents-6 px-2`}
+      className={`mt-16 flex items-center border-b border-accents-6 px-2 md:mt-32`}
     >
       <svg
         className={`mr-2 flex h-4 w-4 shrink-0 grow-0 text-accents-6`}
@@ -50,10 +50,14 @@ export const Search = ({ children, onChange }: SearchProps) => {
       <input
         ref={searchBarRef}
         value={search}
+        autoCorrect="off"
+        autoCapitalize="off"
+        autoComplete="off"
+        name="query"
         onChange={(e) => setSearch(e.target.value)}
         placeholder="upiši pojam"
-        className={`h-7 w-full bg-transparent font-medium outline-none placeholder:font-normal placeholder:text-accents-6`}
-        type="text"
+        className={`hide-clear h-7 w-full bg-transparent font-medium outline-none placeholder:font-normal placeholder:text-accents-6`}
+        type="search"
       />
       {!isFocused && (
         <span
