@@ -10,7 +10,7 @@
 
 Better version of [HJP](https://hjp.znanje.hr/index.php) mainly for personal use.
 
-> This is a personal project, not affiliated with [HJP](https://hjp.znanje.hr/index.php), their work is amazing and I'm just trying to build better UI for it.
+> This is a personal project, not affiliated with [HJP](https://hjp.znanje.hr/index.php), their data is amazing and I'm just trying to build better UI for it.
 
 ## Features
 
@@ -34,4 +34,12 @@ It can be used as standalone tool to scrape HJP.
 
 Simple [Next.js](https://nextjs.org/) 13 app that uses [Meilisearch](https://meilisearch.com/) to search through scraped data.
 
+Meilisearch is also used to fetch definition previews, because there is no need for a additional database.
+
 By using the new React server components static data (word definition) is fetched on the server and cached.
+
+Stack:
+
+- [Next.js](https://nextjs.org/)
+- [Radix UI](https://www.radix-ui.com/) - accordion, hover card
+- [Tailwind CSS](https://tailwindcss.com/) - styling

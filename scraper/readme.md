@@ -59,7 +59,7 @@ Definition example:
 
 #### IDs
 
-Each definition has unique ID, it's derived from `rijec` field using slugify function, in case there are multiple definitions for the same word, ID will defined as:
+Each definition has unique ID, it's derived from `rijec` field using slugify function, in case there are multiple definitions for the same word, ID will be defined as:
 
 ```ts
 const hashedWord = createHash("SHA3-512").update(def.rijec);
@@ -70,9 +70,7 @@ const newId = `${id}-${urlEncoded}`;
 
 #### hrefs
 
-`r/<id>`
-
-All hrefs are relative, so they can be easily replaced
+Since fields like `definicija`, `etimologija` and `sintagma` contain HTML (purified by parser), they also can contain links to other definitions. Parser will update `href` tags to point to correct definition. Default format is `r/<id>`.
 
 ## Usage
 
