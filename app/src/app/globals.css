@@ -41,7 +41,7 @@
 }
 
 body {
-  @apply selection:bg-search-highlight selection:text-accents-9;
+  @apply bg-foreground selection:bg-search-highlight selection:text-accents-9;
 }
 
 input.hide-clear[type="search"]::-webkit-search-decoration,
