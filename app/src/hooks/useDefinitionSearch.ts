@@ -22,12 +22,20 @@ export const useDefinitionSearch = (query: string) => {
 
   useEffect(() => {
     const searchE = async () => {
+      const isQueryEmpty = debouncedQuery.trim() === "";
+
+      if (isQueryEmpty) {
+        setResult(undefined);
+        return;
+      }
+
       const opts = {
         q: cleanSearchQuery(debouncedQuery),
         limit: 30,
         attributesToHighlight: ["rijec", "definicija"],
         attributesToRetrieve: ["rijec", "definicija", "id"],
       } as SearchParams;
+
       const t = await fetch(
         `${process.env.NEXT_PUBLIC_MEILISEARCH_URL}/indexes/definitions/search`,
         {

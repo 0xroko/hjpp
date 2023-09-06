@@ -21,7 +21,7 @@ export const useSearchParamsState = () => {
     [searchParams]
   );
 
-  const searchDebouced = useDebounce(search, 300);
+  const searchDebouced = useDebounce(search.trim(), 300);
 
   useEffect(() => {
     // sync search state with url
@@ -39,7 +39,7 @@ export const useSearchParamsState = () => {
       router.push(pathName, { scroll: false });
       return;
     }
-    router.push(pathName + "?" + newString, { scroll: false });
+    router.replace(pathName + "?" + newString, { scroll: false });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchDebouced]);

@@ -8,13 +8,17 @@ interface SearchProps {
   onChange: (query: string) => void;
 }
 
+/**
+ * Search component that also handles global search state (url query params)
+ */
 export const Search = ({ children, onChange }: SearchProps) => {
+  // this cannot be in page.tsx :( for some reason
   const [search, setSearch] = useSearchParamsState();
 
   const [isFocused, setIsFocused] = useState(false);
 
   const searchBarRef = useRef<HTMLInputElement>(null);
-  useFocusOnKeypress(searchBarRef, "k", true);
+  useFocusOnKeypress(searchBarRef, "/", false);
 
   useEffect(() => {
     if (searchBarRef.current) {
@@ -30,7 +34,7 @@ export const Search = ({ children, onChange }: SearchProps) => {
 
   return (
     <div
-      className={`mt-16 flex items-center border-b border-accents-6 px-2 md:mt-32`}
+      className={`mt-16 flex items-center border-b border-accents-6 px-2 focus-within:border-b-[1.5px] md:mt-32`}
     >
       <svg
         className={`mr-2 flex h-4 w-4 shrink-0 grow-0 text-accents-6`}
@@ -63,7 +67,7 @@ export const Search = ({ children, onChange }: SearchProps) => {
         <span
           className={`flex items-center justify-center rounded-md border border-accents-2 px-1 font-mono text-sm text-accents-6`}
         >
-          ctrl+k
+          /
         </span>
       )}
     </div>
