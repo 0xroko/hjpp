@@ -90,7 +90,7 @@ export default async function Page({
             </div>
           ) : (
             <ol className={`list-inside list-decimal`}>
-              {Object.values(definicija.definicija ?? {}).map((def: any, i) => (
+              {Object.values(definicija.definicija ?? {}).map((def, i) => (
                 <li className={`text-base text-accents-9 `} key={i}>
                   {replaceAWithLink(def)}
                 </li>
