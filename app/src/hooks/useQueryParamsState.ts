@@ -21,28 +21,28 @@ export const useSearchParamsState = () => {
     [searchParams]
   );
 
-  const searchDebouced = useDebounce(search.trim(), 300);
+  const searchDebounced = useDebounce(search.trim(), 300);
 
   useEffect(() => {
     // sync search state with url
     const searchParam = searchParams.get("search") || "";
     if (searchParam === "") return;
-    if (searchParam === searchDebouced) return;
+    if (searchParam === searchDebounced) return;
     setSearchInternal(searchParam);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   useEffect(() => {
-    const newString = createQueryString("search", searchDebouced);
+    const newString = createQueryString("search", searchDebounced);
     if (newString === searchParams.toString()) return;
-    if (searchDebouced === "") {
+    if (searchDebounced === "") {
       router.push(pathName, { scroll: false });
       return;
     }
     router.replace(pathName + "?" + newString, { scroll: false });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchDebouced]);
+  }, [searchDebounced]);
 
   return [search, setSearchInternal] as const;
 };

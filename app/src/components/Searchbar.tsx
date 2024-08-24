@@ -32,6 +32,14 @@ export const Search = ({ children, onChange }: SearchProps) => {
     onChange(search);
   }, [search, onChange]);
 
+  useEffect(() => {
+    if (searchBarRef.current) {
+      searchBarRef.current.focus();
+      const length = searchBarRef.current.value.length;
+      searchBarRef.current.setSelectionRange(length, length);
+    }
+  }, []);
+
   return (
     <div
       className={`mt-16 flex items-center border-b border-accents-6 px-2 focus-within:border-b-[1.5px] md:mt-32`}

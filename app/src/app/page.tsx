@@ -12,11 +12,11 @@ interface SearchProps {
 export default function Home() {
   const [search, setSearch] = useState("");
 
-  const resault = useDefinitionSearch(search);
+  const result = useDefinitionSearch(search);
 
   return (
     <>
-      <div className={`pt-16 md:pt-36`}>
+      <div className={`pt-12 md:pt-36`}>
         <h1
           className={`text-5xl font-bold leading-normal tracking-tight md:text-[5rem]`}
         >
@@ -34,7 +34,7 @@ export default function Home() {
         <div
           className={`mt-[60px] flex flex-col gap-8 [&_em]:rounded-sm [&_em]:bg-search-highlight [&_em]:not-italic`}
         >
-          {resault?.hits?.map((hit) => {
+          {result?.hits?.map((hit) => {
             return (
               <div key={hit?.id} className={`relative text-accents-9`}>
                 <Link className={`absolute inset-0`} href={`/r/${hit?.id}`} />
