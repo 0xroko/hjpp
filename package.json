@@ -1,15 +1,16 @@
 {
   "scripts": {
-    "dev": "cd app && next dev"
+    "dev": "cd app && bun dev"
   },
+  "private": true,
   "workspaces": [
     "app",
     "packages/*"
   ],
   "dependencies": {
-    "typescript": "^5.1.5"
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.7"
+    "@types/bun": "^1.1.11"
   }
 }

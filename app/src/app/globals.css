@@ -50,3 +50,8 @@ input.hide-clear[type="search"]::-webkit-search-results-button,
 input.hide-clear[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
+
+
+.dynamic-title-size {
+  font-size: clamp(1.75rem, 10vw, 5rem);
+}

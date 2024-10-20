@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <div className={`pt-12 md:pt-36`}>
         <h1
-          className={`text-5xl font-bold leading-normal tracking-tight md:text-[5rem]`}
+          className={`text-5xl font-bold dynamic-title-size leading-tight tracking-tight md:text-[5rem]`}
         >
           prȅtraga
         </h1>

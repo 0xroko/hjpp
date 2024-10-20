@@ -68,12 +68,9 @@ export default async function Page({
 
   return (
     <>
-      <div className={`pt-44`}>
+      <div className={`md:pt-44 pt-24`}>
         <h1
-          style={{
-            fontSize: "clamp(1.75rem, 10vw, 5rem)",
-          }}
-          className={`mb-2 break-all font-bold leading-tight tracking-tight md:mb-3`}
+          className={`mb-2 break-all dynamic-title-size font-bold leading-tight tracking-tight md:mb-3`}
         >
           {definicija.rijec}
         </h1>
@@ -82,7 +79,7 @@ export default async function Page({
           dangerouslySetInnerHTML={{ __html: definicija.detalji ?? "" }}
         ></p>
       </div>
-      <section className={`py-36`}>
+      <section className={`md:py-36 py-24`}>
         <div className={``}>
           {typeof definicija.definicija === "string" ? (
             <div className={`text-base text-accents-9`}>
