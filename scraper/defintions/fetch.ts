@@ -17,7 +17,8 @@ const multiBar = new MultiBar(
 const fetchDefinitionPage = async (sitemapRecord: SitemapRecord) => {
   const req = await axios.get(sitemapRecord.url, {
     headers: {
-      "User-Agent": "For-Personal-Project",
+      "User-Agent":
+        "chromeMozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
     },
     timeout: 1000 * 5,
   });
@@ -49,7 +50,7 @@ export const fetchDefinitionPages = async () => {
   const bar1 = multiBar.create(0, 0);
   bar1.start(recordsToFetch.length, 0);
 
-  const promiseLimiter = pLimit(30);
+  const promiseLimiter = pLimit(3);
 
   const fetchPromises = recordsToFetch.map((record) =>
     promiseLimiter(async () => {
