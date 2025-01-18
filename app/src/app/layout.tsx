@@ -4,6 +4,7 @@ import { appName } from "@/const";
 import { Providers } from "@/provider";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -38,6 +39,12 @@ export default function RootLayout({
             </div>
             <Footer />
           </div>
+          <Script
+          defer
+          strategy="afterInteractive"
+          src={process.env.NEXT_PUBLIC_UMAMI_SRC}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          />
         </Providers>
       </body>
     </html>
